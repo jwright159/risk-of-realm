@@ -14,6 +14,7 @@ namespace RiskOfRealm.Items
 		public override string ItemLore => "bepis";
 
 		public override ItemTier Tier => ItemTier.Tier1;
+		public override ItemTag[] ItemTags { get; } = { ItemTag.Utility };
 
 		public override GameObject ItemModel => Resources.Load<GameObject>("Prefabs/PickupModels/PickupMystery");
 		public override GameObject ItemBodyModel => null;
