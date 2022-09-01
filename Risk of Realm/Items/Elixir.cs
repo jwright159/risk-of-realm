@@ -12,7 +12,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Elixer of Defense";
 		public override string ItemLangTokenName => "ELIXIR_OF_DEFENSE";
 		public override string ItemPickupDesc => "Gain a small amount of Armor.";
-		public override string ItemFullDescription => $"Gain <style=cIsUtility>{armor}</style> <style=cStack>(+{armorPerStack} per stack)</style> Armor.";
+		public override string ItemFullDescription => $"Gain <style=cIsUtility>{baseArmor}</style> <style=cStack>(+{armorPerStack} per stack)</style> Armor.";
 		public override string ItemLore => "bepis";
 
 		public override ItemTier Tier => ItemTier.Tier1;
@@ -23,12 +23,12 @@ namespace RiskOfRealm.Items
 
 		public override bool CanRemove => true;
 
-		public float armor;
+		public float baseArmor;
 		public float armorPerStack;
 
 		protected override void CreateConfig(ConfigFile config)
 		{
-			armor = config.Bind<float>("Item: " + ItemName, "Armor", 4).Value;
+			baseArmor = config.Bind<float>("Item: " + ItemName, "Armor", 4).Value;
 			armorPerStack = config.Bind<float>("Item: " + ItemName, "Armor per Stack", 4).Value;
 		}
 
@@ -57,7 +57,16 @@ namespace RiskOfRealm.Items
 
 		protected override void Hooks()
 		{
-			
+			RecalculateStatsAPI.GetStatCoefficients += GrantArmor;
+		}
+
+		private void GrantArmor(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
+		{
+			int count = GetCount(sender);
+			if (count > 0)
+			{
+				args.armorAdd += baseArmor + armorPerStack * (count - 1);
+			}
 		}
 	}
 }
