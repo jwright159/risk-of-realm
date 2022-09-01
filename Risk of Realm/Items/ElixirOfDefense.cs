@@ -1,13 +1,11 @@
-﻿using System;
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 using R2API;
 using RoR2;
 using UnityEngine;
-using static RiskOfRealm.Utils.ItemHelper;
 
 namespace RiskOfRealm.Items
 {
-	class Elixir : ItemBase<Elixir>
+	class ElixirOfDefense : ItemBase<ElixirOfDefense>
 	{
 		public override string ItemName => "Elixer of Defense";
 		public override string ItemLangTokenName => "ELIXIR_OF_DEFENSE";

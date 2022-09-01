@@ -62,7 +62,7 @@ namespace RiskOfRealm
 			{
 				Logger.LogDebug("Spawning Elixir");
 				Transform player = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
-				PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(Elixir.Instance.itemDef.itemIndex), player.position, player.forward * 20f);
+				PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ElixirOfDefense.Instance.itemDef.itemIndex), player.position, player.forward * 20f);
 			}
 		}
 	}
