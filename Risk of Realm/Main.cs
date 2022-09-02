@@ -61,8 +61,8 @@ namespace RiskOfRealm
 			if (Input.GetKeyDown(KeyCode.F2))
 			{
 				Logger.LogDebug("Spawning Elixir");
-				Transform player = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
-				PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(BerylNildrop.Instance.itemDef.itemIndex), player.position, player.forward * 20f);
+				Transform player = PlayerCharacterMasterController.instances[0].master.GetBody().aimOriginTransform;
+				PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(ShriekingArrow.Instance.itemDef.itemIndex), player.position, player.forward * 20f);
 			}
 		}
 	}

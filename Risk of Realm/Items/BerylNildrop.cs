@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Beryl Nildrop";
 		public override string ItemLangTokenName => "BERYL_NILDROP";
 		public override string ItemPickupDesc => "Move faster at the beginning of each stage.";
-		public override string ItemFullDescription => $"For the first <style=cIsUtility>{baseTime}</style> <style=cStack>(+{timePerStack} per stack)</style> seconds each stage, get a <style=cIsUtility>{baseSpeedBoost * 100}%</style> boost to movement speed.";
+		public override string ItemFullDescription => $"For the first <style=cIsUtility>{time}</style> <style=cStack>(+{timePerStack} per stack)</style> seconds each stage, get a <style=cIsUtility>{speedBoost * 100}%</style> boost to movement speed.";
 		public override string ItemLore =>
 			"<style=cMono>Welcome to DataScraper (v3.1.53 - beta branch)\n" +
 			"$ Scraping memory... done.\n" +
@@ -38,15 +38,15 @@ namespace RiskOfRealm.Items
 
 		public override bool CanRemove => true;
 
-		public float baseTime;
+		public float time;
 		public float timePerStack;
-		public float baseSpeedBoost;
+		public float speedBoost;
 
 		protected override void CreateConfig(ConfigFile config)
 		{
-			baseTime = config.Bind("Item: " + ItemName, "Time", 20f).Value;
+			time = config.Bind("Item: " + ItemName, "Time", 20f).Value;
 			timePerStack = config.Bind("Item: " + ItemName, "Time per Stack", 10f).Value;
-			baseSpeedBoost = config.Bind("Item: " + ItemName, "Speed Boost", 0.7f).Value;
+			speedBoost = config.Bind("Item: " + ItemName, "Speed Boost", 0.7f).Value;
 		}
 	}
 }

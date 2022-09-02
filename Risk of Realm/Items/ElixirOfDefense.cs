@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Elixer of Defense";
 		public override string ItemLangTokenName => "ELIXIR_OF_DEFENSE";
 		public override string ItemPickupDesc => "Gain a small amount of Armor.";
-		public override string ItemFullDescription => $"Gain <style=cIsUtility>{baseArmor}</style> <style=cStack>(+{armorPerStack} per stack)</style> Armor.";
+		public override string ItemFullDescription => $"Gain <style=cIsUtility>{armor}</style> <style=cStack>(+{armorPerStack} per stack)</style> Armor.";
 		public override string ItemLore =>
 			"Take it, kin. You must be strong. If you are stronger than them, they won’t bother you any more.\n\n" +
 
@@ -27,12 +27,12 @@ namespace RiskOfRealm.Items
 
 		public override bool CanRemove => true;
 
-		public float baseArmor;
+		public float armor;
 		public float armorPerStack;
 
 		protected override void CreateConfig(ConfigFile config)
 		{
-			baseArmor = config.Bind("Item: " + ItemName, "Armor", 4f).Value;
+			armor = config.Bind("Item: " + ItemName, "Armor", 4f).Value;
 			armorPerStack = config.Bind("Item: " + ItemName, "Armor per Stack", 4f).Value;
 		}
 
@@ -69,7 +69,7 @@ namespace RiskOfRealm.Items
 			int count = GetCount(sender);
 			if (count > 0)
 			{
-				args.armorAdd += baseArmor + armorPerStack * (count - 1);
+				args.armorAdd += armor + armorPerStack * (count - 1);
 			}
 		}
 	}
