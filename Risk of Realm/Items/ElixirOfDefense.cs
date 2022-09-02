@@ -11,7 +11,12 @@ namespace RiskOfRealm.Items
 		public override string ItemLangTokenName => "ELIXIR_OF_DEFENSE";
 		public override string ItemPickupDesc => "Gain a small amount of Armor.";
 		public override string ItemFullDescription => $"Gain <style=cIsUtility>{baseArmor}</style> <style=cStack>(+{armorPerStack} per stack)</style> Armor.";
-		public override string ItemLore => "bepis";
+		public override string ItemLore =>
+			"Take it, kin. You must be strong. If you are stronger than them, they won’t bother you any more.\n\n" +
+
+			"Ah, ah, ah. Do not resist it. The mixture is of bitter root and iron - the taste is strong, but a necessary sacrifice.\n\n" +
+
+			"Feel your skin cement itself. Becoming almost like armor all its own. You can do it, now. You can stand up to them. Make me proud.";
 
 		public override ItemTier Tier => ItemTier.Tier1;
 		public override ItemTag[] ItemTags { get; } = { ItemTag.Utility };
@@ -27,8 +32,8 @@ namespace RiskOfRealm.Items
 
 		protected override void CreateConfig(ConfigFile config)
 		{
-			baseArmor = config.Bind<float>("Item: " + ItemName, "Armor", 4).Value;
-			armorPerStack = config.Bind<float>("Item: " + ItemName, "Armor per Stack", 4).Value;
+			baseArmor = config.Bind("Item: " + ItemName, "Armor", 4f).Value;
+			armorPerStack = config.Bind("Item: " + ItemName, "Armor per Stack", 4f).Value;
 		}
 
 		/*
