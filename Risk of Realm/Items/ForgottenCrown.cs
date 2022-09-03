@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Forgotten Crown";
 		public override string ItemLangTokenName => "FORGOTTEN_CROWN";
 		public override string ItemPickupDesc => "Killing enemies <style=cIsHealing>raises all stats</style>. <style=cIsHealth>All stats drain over time.</style>";
-		public override string ItemFullDescription => $"Killing an enemy raises all stats by {statsPerKill}%, up to a maximum of {statsKillCap}% <style=cStack>(+{statsKillCapPerStack}% per stack)</style>. All stats decay by {statsDecay}% <style=cStack>(+{statsDecayPerStack})% per stack</style>, after not killing enemies for <style=cIsUtility>{gracePeriod}</style> seconds.";
+		public override string ItemFullDescription => $"Killing an enemy raises all stats by {100 * statsPerKill}%, up to a maximum of {100 * statsKillCap}% <style=cStack>(+{100 * statsKillCapPerStack}% per stack)</style>. All stats decay by {100 * statsDecay}% <style=cStack>(+{100 * statsDecayPerStack})% per stack</style>, after not killing enemies for <style=cIsUtility>{gracePeriod}</style> seconds.";
 		public override string ItemLore =>
 			"<style=cMono>\"An eerie reminder of what lays in the depths of...\"</style>\n" +
 			"The rest of the cracked old tablet was chipped. He could only wonder.";

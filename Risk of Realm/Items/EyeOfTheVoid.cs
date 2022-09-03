@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Eye of the Void";
 		public override string ItemLangTokenName => "EYE_OF_THE_VOID";
 		public override string ItemPickupDesc => "Chance to receive <style=cIsHealing>doubled rewards</style> from all interactables. Spending too long on a stage will <style=cIsHealth>permanently drain you</style>.";
-		public override string ItemFullDescription => $"Interactables have a {payoutChance}% <style=cStack>(+{payoutChancePerStack}% per stack)</style> chance to payout twice. Spending longer than {drainStartTimer} minutes on a stage will begin to reduce your maximum health by {healthDrain} <style=cStack>(+{healthDrainPerStack} per stack)</style> every {drainTick} seconds.";
+		public override string ItemFullDescription => $"Interactables have a {100 * payoutChance}% <style=cStack>(+{100 * payoutChancePerStack}% per stack)</style> chance to payout twice. Spending longer than {drainStartTimer} minutes on a stage will begin to reduce your maximum health by {healthDrain} <style=cStack>(+{healthDrainPerStack} per stack)</style> every {drainTick} seconds.";
 		public override string ItemLore =>
 			"I have seen you, interloper. I acknowledge your presence.\n" + 
 			"I am not a foolish being. You are no god.\n\n" +
