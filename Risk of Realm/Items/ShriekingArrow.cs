@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Shrieking Arrow";
 		public override string ItemLangTokenName => "SHRIEKING_ARROW";
 		public override string ItemPickupDesc => "When you start sprinting, shoot homing missiles into nearby enemies. Recharges over time.";
-		public override string ItemFullDescription => $"When you initiate your sprint, release up to {storedArrows} <style=cStack>({storedArrowsPerStack})</style> <style=cIsDamage>homing specter arrows</style> that deal <style=cIsDamage>{arrowDamage}% base damage</style> into nearby enemies, with the specters recharging at a rate of <style=cIsUtility>{arrowsRechargePerSecond}</style> per second.";
+		public override string ItemFullDescription => $"When you initiate your sprint, release up to {storedArrows} <style=cStack>({storedArrowsPerStack})</style> <style=cIsDamage>homing specter arrows</style> that deal <style=cIsDamage>{arrowDamage * 100}% base damage</style> into nearby enemies, with the specters recharging at a rate of <style=cIsUtility>{arrowsRechargePerSecond}</style> per second.";
 		public override string ItemLore =>
 			"Order: Shrieking Arrow\n" +
 			"Tracking Number: 52******\n" +
@@ -48,7 +48,7 @@ namespace RiskOfRealm.Items
 		{
 			storedArrows = config.Bind("Item: " + ItemName, "Stored Arrows", 4f).Value;
 			storedArrowsPerStack = config.Bind("Item: " + ItemName, "Stored Arrows Per Stack", 2f).Value;
-			arrowDamage = config.Bind("Item: " + ItemName, "Arrow Damage", 180f).Value;
+			arrowDamage = config.Bind("Item: " + ItemName, "Arrow Damage", 1.8f).Value;
 			arrowsRechargePerSecond = config.Bind("Item: " + ItemName, "Arrows Recharge Per Second", 1f).Value;
 		}
 	}
