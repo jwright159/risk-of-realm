@@ -20,12 +20,12 @@ namespace RiskOfRealm.Items
 			"Outputting video...</style>\n\n\n" +
 
 			"The guard rattled the prisoner's chains.\n" +
-			"\"What you've done, bub... well, seems like you’re gonna be here a while. Crimes against the Federation... stealing classified artifacts from archeology outreaches… even trying to involve your own son in your schemes with dangerous, illegal steroids! Thank goodness we intercepted your packages before they got off the ship. Yep. You’re gonna be in the brig for a very, very long time./"/n" +
+			"\"What you've done, bub... well, seems like you’re gonna be here a while. Crimes against the Federation... stealing classified artifacts from archeology outreaches… even trying to involve your own son in your schemes with dangerous, illegal steroids! Thank goodness we intercepted your packages before they got off the ship. Yep. You’re gonna be in the brig for a very, very long time.\"\n" +
 			"The prisoner chuckled, his eyes glowing a faint violet.\n\n" +
 
-			"\"None of that matters now. The corporal showed me - he showed me <style=cArtifact>the Stone</style>. This is something beyond all of us. You don’t know what’s coming. Neither does the captain. Neither does The Brother, the heretical brother, neither does The Mad God, despite all of his brute strength. The end is coming for us all.\"\n\n" +
+			"\"None of that matters now. The corporal showed me - he showed me <style=cArtifact>the Stone</style>. This is something beyond all of us. You don’t know what’s coming. Neither does the captain. Neither does The Brother, the heretical brother, neither does The Mad God, despite all of his brute strength. The <style=cArtifact>end</style> is coming for us all.\"\n\n" +
 
-			"The guard chuckled. /"Whatever weird strategy this is, it won't work on me. Been on the force for decades./"/n/n/n" +
+			"The guard chuckled. \"Whatever weird strategy this is, it won't work on me. Been on the force for decades.\"\n\n\n" +
 			"The prisoner rattled his chains.";
 
 
