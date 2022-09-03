@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Transformation Potion";
 		public override string ItemLangTokenName => "TRANSFORMATION_POTION";
 		public override string ItemPickupDesc => "Chance on hit to turn enemies into Beetles.";
-		public override string ItemFullDescription => $"<style=cIsUtility>{transformChance}%</style> <style=cStack>(+{transformChancePerStack}% per stack)</style> chance on hit to <style=cIsUtility>transform</style> a non-boss enemy into a Beetle. Retains health and stats.";
+		public override string ItemFullDescription => $"<style=cIsUtility>{100 * transformChance}%</style> <style=cStack>(+{100 * transformChancePerStack}% per stack)</style> chance on hit to <style=cIsUtility>transform</style> a non-boss enemy into a Beetle.";
 		public override string ItemLore =>
 			"\"Doctor, are you sure this is safe?\"\n\n" +
 

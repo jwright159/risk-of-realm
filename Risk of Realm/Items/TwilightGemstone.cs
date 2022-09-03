@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "Twilight Gemstone";
 		public override string ItemLangTokenName => "TWILIGHT_GEMSTONE";
 		public override string ItemPickupDesc => "Chance to shorten a Skill’s next cooldown when it is used.";
-		public override string ItemFullDescription => $"When using your Skills, <style=cIsUtility>{reductionChance}%</style> chance <style=cStack>(+{reductionChancePerStack}% per stack)</style> for {cooldownReduction} of its cooldown to pass instantly.";
+		public override string ItemFullDescription => $"When using your Skills, <style=cIsUtility>{100 * reductionChance}%</style> chance <style=cStack>(+{100 * reductionChancePerStack}% per stack)</style> for {cooldownReduction} of its cooldown to pass instantly.";
 		public override string ItemLore =>
 			"\"...Supervisor Rand?\"\n" +
 			"\"Yes, corporal?\"\n" +
