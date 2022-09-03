@@ -10,7 +10,7 @@ namespace RiskOfRealm.Items
 		public override string ItemName => "God Horn";
 		public override string ItemLangTokenName => "GOD_HORN";
 		public override string ItemPickupDesc => "Massively increased attack speed while at full health.";
-		public override string ItemFullDescription => $"Increases attack speed by <style=cIsDamage>{attackSpeedBoost}</style> <style=cStack>(+{attackSpeedPerStack} per stack)</style> while at <style=cIsHealth>full health.</style>";
+		public override string ItemFullDescription => $"Increases attack speed by <style=cIsDamage>{100 * attackSpeedBoost}</style> <style=cStack>(+{100 * attackSpeedPerStack} per stack)</style> while at <style=cIsHealth>full health.</style>";
 		public override string ItemLore =>
 			"<style=cMono>Intercepting signal... 33%...\n" +
 			"Intercepting signal... 47%...\n" +
