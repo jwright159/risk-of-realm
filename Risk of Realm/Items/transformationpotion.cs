@@ -16,12 +16,11 @@ namespace RiskOfRealm.Items
 
 			"\"Ah, yes! Yes, do not worry, Johannes! Perfectly safe! The solution has been tested for every side effect. Now - drink! Watch your wildest dreams come true!\"\n\n" +
 
-			"Johannes drank the potion. His vision began to shift. He felt as if he was falling. When he settled, he was staring at the doctor’s shoe. At eye level."\n\n
+			"Johannes drank the potion. His vision began to shift. He felt as if he was falling. When he settled, he was staring at the doctor’s shoe. At eye level.\n\n" +
 
 			"\"Chit, chit chit… CHIT CHIT CHIT CHIT!!!\"\n\n" +
 
-			"\"Very good. Very good.\""
-
+			"\"Very good. Very good.\"";
 
 		public override ItemTier Tier => ItemTier.Tier2;
 		public override ItemTag[] ItemTags { get; } = { ItemTag.Utility };
