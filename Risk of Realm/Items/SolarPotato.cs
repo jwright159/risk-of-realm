@@ -16,7 +16,7 @@ namespace RiskOfRealm.Items
 
 			"Anyways, this batch is the closest we've gotten to replicating so far. Power is still diluted, but it's getting close to what that crazy guy at the top of the corporate food chain has been demanding. Maybe if we finish it we'll finally get to cash in our IOU's…\n\n\n" +
 
-			"<style=cSub>-Note attached to a variety of unstable contraband found on an abandoned ship marked \"NexUs\" products. No company with this registration noted within the Federation.</style>;
+			"<style=cSub>-Note attached to a variety of unstable contraband found on an abandoned ship marked \"NexUs\" products. No company with this registration noted within the Federation.</style>";
 
 		public override ItemTier Tier => ItemTier.Tier1;
 		public override ItemTag[] ItemTags { get; } = { ItemTag.Utility };
