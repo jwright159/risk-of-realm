@@ -13,8 +13,8 @@ namespace RiskOfRealm.Items
 		public override string ItemFullDescription => $"Gain <style=cIsUtility>+{baseArmor} Armor</style>. Grants additional Armor that builds up over {bonusArmorBuilding} seconds to a maximum of {bonusArmorCap} <style=cStack>(+{bonusArmorCapPerStack} per stack)</style>. Upon taking damage, reduce this bonus Armor by {100 * {armorHurt}% of the damage sustained.";
 		public override string ItemLore =>
 			"My loyal sentinel entered the throne room.\n" +
-			"\"Through the gloom\" he spoke, \"I see impending doom…\"\n" +
-			"\"Behold this\", a slab, slathered in murky purple ooze.\n" +
+			"\"Through the gloom\" he spoke, \"I see impending doom...\"\n" +
+			"\"I found this,\", a slab, slathered in murky purple ooze.\n" +
 			"He gave me a peer, with ruin coming into view.\n\n" +
 
 			"The voice in my head told me to decline.\n" +
