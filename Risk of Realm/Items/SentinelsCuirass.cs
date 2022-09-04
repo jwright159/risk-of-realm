@@ -18,9 +18,8 @@ namespace RiskOfRealm.Items
 			"He gave me a peer, with ruin coming into view.\n\n" +
 
 			"The voice in my head told me to decline.\n" +
-			"<style=cArtifact>\"What does he take you for? A cube that is blind!" +
+			"<style=cArtifact>\"What does he take you for? A cube that is blind!\n" +
 			"Go and show HIM a piece of your mind!\"</style>\n\n" + 
-
 			"I slowly rose from my seat.\n" +
 			"My heart skipped a beat as I got to my feet.\n" +
 			"\"Let me be discreet, and with all due respects\n" +
@@ -38,22 +37,17 @@ namespace RiskOfRealm.Items
 
 			"<style=cEvent>-The Tragedy of King [REDACTED], Act IV Scene II</style>";
 
-
 		public override ItemTier Tier => ItemTier.Tier3;
 		public override ItemTag[] ItemTags { get; } = { ItemTag.Utility };
-
 		public override GameObject ItemModel => Resources.Load<GameObject>("Prefabs/PickupModels/PickupMystery");
 		public override GameObject ItemBodyModel => null;
 		public override Sprite ItemIcon => Resources.Load<Sprite>("Textures/MiscIcons/texMysteryIcon");
-
 		public override bool CanRemove => true;
-
 		public float baseArmor;
 		public float bonusArmorBuilding;
 		public float bonusArmorCap;
 		public float bonusArmorCapPerStack;
 		public float armorHurt;
-
 		protected override void CreateConfig(ConfigFile config)
 		{
 			baseArmor = config.Bind("Item: " + ItemName, "Base Armor", 50f).Value;
