@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace RiskOfRealm.Items
 {
-	class AmbrosiaVial : ItemBase<AmbrosiaVoal>
+	class AmbrosiaVial : ItemBase<AmbrosiaVial>
 	{
 		public override string ItemName => "Ambrosia Vial";
 		public override string ItemLangTokenName => "AMBROSIA_VIAL";
