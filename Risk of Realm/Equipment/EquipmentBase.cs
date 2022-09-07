@@ -31,11 +31,11 @@ namespace RiskOfRealm.Equipment
 		public abstract GameObject ItemBodyModel { get; }
 		public abstract Sprite ItemIcon { get; }
 
-		public virtual bool CanDrop { get; } = true;
-		public virtual float Cooldown { get; } = 60f;
-		public virtual bool EnigmaCompatible { get; } = true;
-		public virtual bool IsBoss { get; } = false;
-		public virtual bool IsLunar { get; } = false;
+		public virtual bool CanDrop => true;
+		public virtual float Cooldown => 60f;
+		public virtual bool EnigmaCompatible => true;
+		public virtual bool IsBoss => false;
+		public virtual bool IsLunar => false;
 
 		public EquipmentDef equipmentDef = ScriptableObject.CreateInstance<EquipmentDef>();
 
