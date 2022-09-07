@@ -21,7 +21,7 @@ namespace RiskOfRealm.Items
 			"Waxing and waning.\n\n\n" +
 
 			"A line of glass beads.\n" +
-			"Order masked as chaos.\n" +
+			"Order masking as chaos.\n" +
 			"Like pearls on string.";
 
 		public override ItemTier Tier => ItemTier.TierLunar;
