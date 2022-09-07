@@ -9,7 +9,7 @@ namespace RiskOfRealm.Items
 	{
 		public override string ItemName => "Ambrosia Vial";
 		public override string ItemLangTokenName => "AMBROSIA_VIAL";
-		public override string ItemPickupDesc => "All non-player allies have more health and damage..";
+		public override string ItemPickupDesc => "All non-player allies have more health and damage.";
 		public override string ItemFullDescription => $"All non-player allies (drones/item summons/etc.) get <style=cIsHealing>+{100 * petHealthBoost}%</style> <style=cStack>(+{petHealthBoostPerStack}% per stack)</style> health and <style=cIsDamage>+{100 * petDamageBoost}%</style> <style=cStack>(+{petDamageBoostPerStack}% per stack)</style> damage.";
 		public override string ItemLore =>
 			"NEW! NEW!\n\n" +
