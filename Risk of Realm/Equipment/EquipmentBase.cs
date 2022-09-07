@@ -21,15 +21,15 @@ namespace RiskOfRealm.Equipment
 
 	public abstract class EquipmentBase
 	{
-		public abstract string EquipmentName { get; }
-		public abstract string EquipmentLangTokenName { get; }
-		public abstract string EquipmentPickupDesc { get; }
-		public abstract string EquipmentFullDescription { get; }
-		public abstract string EquipmentLore { get; }
+		public abstract string Name { get; }
+		public abstract string LangToken { get; }
+		public abstract string PickupDescription { get; }
+		public abstract string FullDescription { get; }
+		public abstract string Lore { get; }
 
-		public abstract GameObject ItemModel { get; }
-		public abstract GameObject ItemBodyModel { get; }
-		public abstract Sprite ItemIcon { get; }
+		public abstract GameObject Model { get; }
+		public abstract GameObject BodyModel { get; }
+		public abstract Sprite Icon { get; }
 
 		public virtual bool CanDrop => true;
 		public virtual float Cooldown => 60f;
@@ -37,7 +37,7 @@ namespace RiskOfRealm.Equipment
 		public virtual bool IsBoss => false;
 		public virtual bool IsLunar => false;
 
-		public EquipmentDef equipmentDef = ScriptableObject.CreateInstance<EquipmentDef>();
+		public EquipmentDef def = ScriptableObject.CreateInstance<EquipmentDef>();
 
 		public virtual void Init(ConfigFile config)
 		{
@@ -52,32 +52,32 @@ namespace RiskOfRealm.Equipment
 
 		protected void CreateLang()
 		{
-			LanguageAPI.Add("EQUIPMENT_" + EquipmentLangTokenName + "_NAME", EquipmentName);
-			LanguageAPI.Add("EQUIPMENT_" + EquipmentLangTokenName + "_PICKUP", EquipmentPickupDesc);
-			LanguageAPI.Add("EQUIPMENT_" + EquipmentLangTokenName + "_DESCRIPTION", EquipmentFullDescription);
-			LanguageAPI.Add("EQUIPMENT_" + EquipmentLangTokenName + "_LORE", EquipmentLore);
+			LanguageAPI.Add("EQUIPMENT_" + LangToken + "_NAME", Name);
+			LanguageAPI.Add("EQUIPMENT_" + LangToken + "_PICKUP", PickupDescription);
+			LanguageAPI.Add("EQUIPMENT_" + LangToken + "_DESCRIPTION", FullDescription);
+			LanguageAPI.Add("EQUIPMENT_" + LangToken + "_LORE", Lore);
 		}
 
 		protected virtual ItemDisplayRuleDict CreateItemDisplayRules() => new();
 
 		protected void CreateItem()
 		{
-			equipmentDef.name = "ITEM_" + EquipmentLangTokenName;
-			equipmentDef.nameToken = "ITEM_" + EquipmentLangTokenName + "_NAME";
-			equipmentDef.pickupToken = "ITEM_" + EquipmentLangTokenName + "_PICKUP";
-			equipmentDef.descriptionToken = "ITEM_" + EquipmentLangTokenName + "_DESCRIPTION";
-			equipmentDef.loreToken = "ITEM_" + EquipmentLangTokenName + "_LORE";
+			def.name = "EQUIPMENT_" + LangToken;
+			def.nameToken = "EQUIPMENT_" + LangToken + "_NAME";
+			def.pickupToken = "EQUIPMENT_" + LangToken + "_PICKUP";
+			def.descriptionToken = "EQUIPMENT_" + LangToken + "_DESCRIPTION";
+			def.loreToken = "EQUIPMENT_" + LangToken + "_LORE";
 			//itemDef.pickupModelPrefab = Main.Assets.LoadAsset<GameObject>(ItemModelPath);
 			//itemDef.pickupIconSprite = Main.Assets.LoadAsset<Sprite>(ItemIconPath);
-			equipmentDef.pickupModelPrefab = ItemModel;
-			equipmentDef.pickupIconSprite = ItemIcon;
-			equipmentDef.canDrop = CanDrop;
-			equipmentDef.cooldown = Cooldown;
-			equipmentDef.enigmaCompatible = EnigmaCompatible;
-			equipmentDef.isBoss = IsBoss;
-			equipmentDef.isLunar = IsLunar;
+			def.pickupModelPrefab = Model;
+			def.pickupIconSprite = Icon;
+			def.canDrop = CanDrop;
+			def.cooldown = Cooldown;
+			def.enigmaCompatible = EnigmaCompatible;
+			def.isBoss = IsBoss;
+			def.isLunar = IsLunar;
 
-			ItemAPI.Add(new CustomEquipment(equipmentDef, CreateItemDisplayRules()));
+			ItemAPI.Add(new CustomEquipment(def, CreateItemDisplayRules()));
 			On.RoR2.EquipmentSlot.PerformEquipmentAction += PerformEquipmentAction;
 		}
 
@@ -85,7 +85,7 @@ namespace RiskOfRealm.Equipment
 
 		private bool PerformEquipmentAction(On.RoR2.EquipmentSlot.orig_PerformEquipmentAction orig, EquipmentSlot slot, EquipmentDef equipmentDef)
 		{
-			if (equipmentDef == this.equipmentDef)
+			if (equipmentDef == this.def)
 				return ActivateEquipment(slot);
 			else
 				return orig(slot, equipmentDef);
