@@ -9,7 +9,7 @@ namespace RiskOfRealm.Items
 	{
 		public override string ItemName => "PC - K33PRs";
 		public override string ItemLangTokenName => "PEACE_KEEPERS";
-		public override string ItemPickupDesc => "All damage you deal to a class of enemy will be redirected to the first one struck. Corrupts all Cloudflash Engines.";
+		public override string ItemPickupDesc => "All damage you deal to a class of enemy will be redirected to the first one struck. <style=cIsVoid>Corrupts all Cloudflash Engines</style>.";
 		public override string ItemFullDescription => $"Directly hitting an enemy marks it with a debuff, redirecting {100 * redirectDamage}% <style=cStack>(+{100 * redirectDamagePerStack}% per stack)</style> total damage dealt to others of the same type unto itself until death. Once dead, a new enemy may be marked.";
 		public override string ItemLore =>
 			"War. It is brutal, it is corrupting, it is all-consuming, it is...\n\n" +

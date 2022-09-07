@@ -9,7 +9,7 @@ namespace RiskOfRealm.Items
 	{
 		public override string ItemName => "Necrofish Extract";
 		public override string ItemLangTokenName => "NECROFISH_EXTRACT";
-		public override string ItemPickupDesc => "Hits have a chance to apply all their status effects numerous times. Corrupts all Plague Flasks.";
+		public override string ItemPickupDesc => "Hits have a chance to apply all their status effects numerous times. <style=cIsVoid>Corrupts all Plague Flasks</style>.";
 		public override string ItemFullDescription => $"Hits have a {100 * multiplyChance}% chance to apply {debuffBoost} <style=cStack>(+{debuffBoostPerStack} per stack)</style> <style=cIsDamage>additional stacks</style> of all status effects they happen to apply. Non-stackable effects have their duration doubled.";
 		public override string ItemLore =>
 			"...For generations had the colossal beast terrorized the great sea that bordered their illustrious nation state, constructed on a middling isle positioned well into the Irizan Sea of Krater IV. The aquatic monstrosity retained a malice for all living beings inexplicable to the human mind, an aggression unseen before in any creature.\n\n" +
